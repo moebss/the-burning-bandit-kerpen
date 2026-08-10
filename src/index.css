@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Outfit', sans-serif;
+  }
+  h1, h2, h3, .font-display, .font-syne {
+    font-family: 'Syne', sans-serif;
+  }
+}
+
+/* Kreativrichtung: Provokant / Dark Industrial / Autorität / Durchdacht */
+/* Begründung: Kult Tattoo-Studio in Kerpen mit 4.8 Sternen & 160+ Bewertungen */
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
