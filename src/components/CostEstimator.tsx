@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, Calculator } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface CostEstimatorProps {
   onOpenContact: () => void;
@@ -31,10 +31,10 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         
         <div className="text-center mb-12">
-          <span className="text-xs font-bold tracking-widest text-amber-400 uppercase bg-slate-900/90 border border-amber-500/40 px-3.5 py-1.5 rounded-full">
+          <span className="text-xs font-semibold tracking-widest text-[#c9a84c] uppercase bg-[#121216] border border-[#c9a84c]/30 px-3.5 py-1.5 rounded-full">
             Tattoo-Rechner
           </span>
-          <h2 className="font-syne text-3xl sm:text-4xl font-extrabold text-white mt-4">
+          <h2 className="font-outfit text-3xl sm:text-4xl font-extrabold text-white mt-4">
             Dauer & Richtpreis Schätzen
           </h2>
           <p className="text-slate-300 text-sm mt-2 font-normal">
@@ -46,10 +46,10 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
           
           {/* Step Indicator */}
           <div className="flex items-center justify-between border-b border-slate-800 pb-4">
-            <span className="text-xs font-bold uppercase text-amber-400 tracking-widest">Schritt {step} von 3</span>
+            <span className="text-xs font-bold uppercase text-[#c9a84c] tracking-widest">Schritt {step} von 3</span>
             <div className="flex items-center gap-2">
               {[1, 2, 3].map((i) => (
-                <div key={i} className={`w-2.5 h-2.5 rounded-full ${step >= i ? 'bg-amber-400' : 'bg-slate-800'}`} />
+                <div key={i} className={`w-2.5 h-2.5 rounded-full ${step >= i ? 'bg-[#c9a84c]' : 'bg-slate-800'}`} />
               ))}
             </div>
           </div>
@@ -57,7 +57,7 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
           {/* Step 1: Größe */}
           {step === 1 && (
             <div className="space-y-4">
-              <h3 className="font-syne font-bold text-xl text-white">1. Wie groß soll Ihr Tattoo ungefähr werden?</h3>
+              <h3 className="font-outfit font-bold text-xl text-white">1. Wie groß soll Ihr Tattoo ungefähr werden?</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
                   { id: 'klein', label: 'Klein (bis 5 cm)', sub: 'Schriftzug / Micro' },
@@ -71,8 +71,8 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
                     onClick={() => setTattooSize(item.id)}
                     className={`p-4 rounded-2xl text-left border transition-all cursor-pointer ${
                       tattooSize === item.id 
-                        ? 'bg-slate-900 border-amber-400 shadow-md text-white' 
-                        : 'bg-slate-950/60 border-slate-800 text-slate-300 hover:border-slate-700'
+                        ? 'bg-[#0b0b0e] border-[#c9a84c] shadow-md text-white' 
+                        : 'bg-[#0b0b0e]/60 border-slate-800 text-slate-300 hover:border-slate-700'
                     }`}
                   >
                     <span className="font-bold block text-sm">{item.label}</span>
@@ -82,7 +82,7 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
               </div>
               <button
                 onClick={() => setStep(2)}
-                className="mt-6 bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-xs px-6 py-3 rounded-xl flex items-center gap-2 ml-auto uppercase tracking-wider cursor-pointer"
+                className="mt-6 bg-[#c9a84c] hover:bg-[#b8973b] text-slate-950 font-bold text-xs px-6 py-3 rounded-xl flex items-center gap-2 ml-auto uppercase tracking-wider cursor-pointer"
               >
                 <span>Weiter zu Schritt 2</span>
                 <ArrowRight className="w-4 h-4" />
@@ -93,7 +93,7 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
           {/* Step 2: Detailgrad */}
           {step === 2 && (
             <div className="space-y-4">
-              <h3 className="font-syne font-bold text-xl text-white">2. Welchen Stil & Detailgrad bevorzugen Sie?</h3>
+              <h3 className="font-outfit font-bold text-xl text-white">2. Welchen Stil & Detailgrad bevorzugen Sie?</h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {[
                   { id: 'fineline', label: 'Fine Line / Minimalist', sub: 'Hauchdünne Linien' },
@@ -106,8 +106,8 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
                     onClick={() => setDetailLevel(item.id)}
                     className={`p-4 rounded-2xl text-left border transition-all cursor-pointer ${
                       detailLevel === item.id 
-                        ? 'bg-slate-900 border-amber-400 shadow-md text-white' 
-                        : 'bg-slate-950/60 border-slate-800 text-slate-300 hover:border-slate-700'
+                        ? 'bg-[#0b0b0e] border-[#c9a84c] shadow-md text-white' 
+                        : 'bg-[#0b0b0e]/60 border-slate-800 text-slate-300 hover:border-slate-700'
                     }`}
                   >
                     <span className="font-bold block text-sm">{item.label}</span>
@@ -119,7 +119,7 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
                 <button onClick={() => setStep(1)} className="text-xs font-bold text-slate-400 hover:underline">Zurück</button>
                 <button
                   onClick={() => setStep(3)}
-                  className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-xs px-6 py-3 rounded-xl flex items-center gap-2 uppercase tracking-wider cursor-pointer"
+                  className="bg-[#c9a84c] hover:bg-[#b8973b] text-slate-950 font-bold text-xs px-6 py-3 rounded-xl flex items-center gap-2 uppercase tracking-wider cursor-pointer"
                 >
                   <span>Weiter zu Schritt 3</span>
                   <ArrowRight className="w-4 h-4" />
@@ -131,7 +131,7 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
           {/* Step 3: Ergebnis */}
           {step === 3 && (
             <div className="space-y-6">
-              <h3 className="font-syne font-bold text-xl text-white">3. Wo soll das Tattoo platziert werden?</h3>
+              <h3 className="font-outfit font-bold text-xl text-white">3. Wo soll das Tattoo platziert werden?</h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {[
                   { id: 'unterarm', label: 'Arm / Beine', sub: 'Standardplatzierung' },
@@ -144,8 +144,8 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
                     onClick={() => setBodyPart(item.id)}
                     className={`p-4 rounded-2xl text-left border transition-all cursor-pointer ${
                       bodyPart === item.id 
-                        ? 'bg-slate-900 border-amber-400 shadow-md text-white' 
-                        : 'bg-slate-950/60 border-slate-800 text-slate-300 hover:border-slate-700'
+                        ? 'bg-[#0b0b0e] border-[#c9a84c] shadow-md text-white' 
+                        : 'bg-[#0b0b0e]/60 border-slate-800 text-slate-300 hover:border-slate-700'
                     }`}
                   >
                     <span className="font-bold block text-sm">{item.label}</span>
@@ -155,16 +155,16 @@ export default function CostEstimator({ onOpenContact }: CostEstimatorProps) {
               </div>
 
               {/* Result Box */}
-              <div className="bg-[#0b0b0e] text-white p-6 rounded-2xl border border-amber-500/40 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-2xl">
+              <div className="bg-[#0b0b0e] text-white p-6 rounded-2xl border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-2xl">
                 <div>
-                  <span className="text-xs text-amber-400 font-bold uppercase tracking-wider block">Voraussichtlicher Zeit- & Finanzbedarf:</span>
-                  <span className="font-syne font-extrabold text-3xl text-white">ca. {est.hours} Stunden ({est.price} €)</span>
+                  <span className="text-xs text-[#c9a84c] font-bold uppercase tracking-wider block">Voraussichtlicher Zeit- & Finanzbedarf:</span>
+                  <span className="font-outfit font-extrabold text-3xl text-white">ca. {est.hours} Stunden ({est.price} €)</span>
                   <span className="text-[11px] text-slate-400 block mt-1">Unverbindliche Orientierung • Endpreis nach Vorab-Beratung</span>
                 </div>
 
                 <button
                   onClick={onOpenContact}
-                  className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-xs px-6 py-3.5 rounded-xl transition-all shadow-md uppercase tracking-wider cursor-pointer"
+                  className="bg-[#c9a84c] hover:bg-[#b8973b] text-slate-950 font-bold text-xs px-6 py-3.5 rounded-xl transition-all shadow-md uppercase tracking-wider cursor-pointer"
                 >
                   Motiv Besprechen
                 </button>

@@ -2,15 +2,15 @@
 
 @layer base {
   body {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
-  h1, h2, h3, .font-display, .font-syne {
-    font-family: 'Syne', sans-serif;
+  h1, h2, h3, .font-display, .font-outfit {
+    font-family: 'Outfit', sans-serif;
   }
 }
 
-/* Kreativrichtung: Provokant / Dark Industrial / Autorität / Durchdacht */
-/* Begründung: Kult Tattoo-Studio in Kerpen mit 4.8 Sternen & 160+ Bewertungen */
+/* Kreativrichtung: High-End Editorial Dark / Champagner-Gold / Autorität / Durchdacht */
+/* Begründung: SmokeFactory High-End Studio-Ästhetik für The Burning Bandit in Kerpen */
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;

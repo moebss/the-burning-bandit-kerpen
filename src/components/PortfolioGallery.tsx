@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 import heroImg from '../images/hero_tattoo.jpg';
 import gallery1 from '../images/gallery_1.jpg';
@@ -51,10 +51,10 @@ export default function PortfolioGallery({ onOpenContact }: PortfolioGalleryProp
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-bold tracking-widest text-amber-400 uppercase bg-slate-900/90 border border-amber-500/40 px-3.5 py-1.5 rounded-full">
+          <span className="text-xs font-semibold tracking-widest text-[#c9a84c] uppercase bg-[#121216] border border-[#c9a84c]/30 px-3.5 py-1.5 rounded-full">
             Portfolio & Inspiration
           </span>
-          <h2 className="font-syne text-3xl sm:text-4xl font-extrabold text-white mt-4">
+          <h2 className="font-outfit text-3xl sm:text-4xl font-extrabold text-white mt-4">
             Echte Arbeiten aus Unserem Studio
           </h2>
           <p className="text-slate-300 text-sm sm:text-base mt-2 font-normal">
@@ -74,8 +74,8 @@ export default function PortfolioGallery({ onOpenContact }: PortfolioGalleryProp
                 onClick={() => setFilter(tab.id)}
                 className={`text-xs font-bold px-4 py-2 rounded-xl transition-all cursor-pointer ${
                   filter === tab.id
-                    ? 'bg-amber-500 text-slate-950 shadow-md'
-                    : 'bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-700'
+                    ? 'bg-[#c9a84c] text-slate-950 shadow-md'
+                    : 'bg-[#121216] text-slate-300 hover:bg-slate-800 border border-slate-800'
                 }`}
               >
                 {tab.label}
@@ -87,30 +87,30 @@ export default function PortfolioGallery({ onOpenContact }: PortfolioGalleryProp
         {/* Showcase Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredItems.map((item, idx) => (
-            <div key={idx} className="bg-[#121216] border border-slate-800/80 rounded-3xl overflow-hidden shadow-xl hover:border-amber-500/50 transition-all flex flex-col justify-between group">
+            <div key={idx} className="bg-[#121216] border border-slate-800/80 rounded-3xl overflow-hidden shadow-xl hover:border-[#c9a84c]/50 transition-all flex flex-col justify-between group">
               <div className="relative aspect-4/3 overflow-hidden bg-slate-950">
                 <img
                   src={item.img}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-95"
                 />
-                <span className="absolute top-3 right-3 bg-[#0b0b0e]/90 text-amber-400 border border-amber-500/30 font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full backdrop-blur-xs">
+                <span className="absolute top-3 right-3 bg-[#0b0b0e]/90 text-[#c9a84c] border border-[#c9a84c]/30 font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full backdrop-blur-xs">
                   {item.tag}
                 </span>
               </div>
 
               <div className="p-5 space-y-2 flex-grow flex flex-col justify-between">
                 <div>
-                  <h3 className="font-syne font-bold text-lg text-white">{item.title}</h3>
+                  <h3 className="font-outfit font-bold text-lg text-white">{item.title}</h3>
                   <p className="text-xs text-slate-400 font-normal leading-relaxed mt-1">{item.desc}</p>
                 </div>
 
                 <button
                   onClick={onOpenContact}
-                  className="mt-4 w-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs py-3 rounded-xl border border-slate-700 transition-all flex items-center justify-center gap-1.5 uppercase tracking-wider cursor-pointer"
+                  className="mt-4 w-full bg-[#c9a84c] hover:bg-[#b8973b] text-slate-950 font-bold text-xs py-3 rounded-xl transition-all flex items-center justify-center gap-1.5 uppercase tracking-wider cursor-pointer"
                 >
                   <span>Motiv Besprechen</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-amber-400" />
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             </div>
