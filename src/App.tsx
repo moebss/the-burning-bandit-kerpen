@@ -4,6 +4,7 @@ import TrustStrip from './components/TrustStrip';
 import ServicePrices from './components/ServicePrices';
 import TattooArtists from './components/TattooArtists';
 import AboutUs from './components/AboutUs';
+import GoogleReviews from './components/GoogleReviews';
 import BeforeAfterSlider from './components/BeforeAfterSlider';
 import CostEstimator from './components/CostEstimator';
 import FAQ from './components/FAQ';
@@ -27,6 +28,7 @@ export default function App() {
         <ServicePrices onOpenContact={scrollToContact} />
         <TattooArtists onOpenContact={scrollToContact} />
         <AboutUs />
+        <GoogleReviews />
         <BeforeAfterSlider />
         <CostEstimator onOpenContact={scrollToContact} />
         <FAQ />
