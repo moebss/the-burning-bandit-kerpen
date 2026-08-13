@@ -24,7 +24,7 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
         <nav className="hidden md:flex items-center gap-8 text-xs font-semibold text-slate-300 uppercase tracking-widest">
           <a href="#stile" className="hover:text-[#c9a84c] transition-colors">Tattoo Stile</a>
           <a href="#ueber-uns" className="hover:text-[#c9a84c] transition-colors">Studio & Team</a>
-          <a href="#galerie-grid" className="hover:text-[#c9a84c] transition-colors">Portfolio</a>
+          <a href="#artists" className="hover:text-[#c9a84c] transition-colors">Artists</a>
           <a href="#coverup" className="hover:text-[#c9a84c] transition-colors">Cover-Up</a>
           <a href="#rechner" className="hover:text-[#c9a84c] transition-colors">Stundenschätzer</a>
           <a href="#faq" className="hover:text-[#c9a84c] transition-colors">FAQ</a>

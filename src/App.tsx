@@ -2,8 +2,8 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TrustStrip from './components/TrustStrip';
 import ServicePrices from './components/ServicePrices';
+import TattooArtists from './components/TattooArtists';
 import AboutUs from './components/AboutUs';
-import PortfolioGallery from './components/PortfolioGallery';
 import BeforeAfterSlider from './components/BeforeAfterSlider';
 import CostEstimator from './components/CostEstimator';
 import FAQ from './components/FAQ';
@@ -25,8 +25,8 @@ export default function App() {
         <Hero onOpenContact={scrollToContact} />
         <TrustStrip />
         <ServicePrices onOpenContact={scrollToContact} />
+        <TattooArtists onOpenContact={scrollToContact} />
         <AboutUs />
-        <PortfolioGallery onOpenContact={scrollToContact} />
         <BeforeAfterSlider />
         <CostEstimator onOpenContact={scrollToContact} />
         <FAQ />
