@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
+import { Phone, MapPin, Clock, Send, CheckCircle, Navigation } from 'lucide-react';
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -13,52 +13,76 @@ export default function Contact() {
     <section id="kontakt" className="py-20 bg-[#0b0b0e] border-b border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           
-          {/* Left Info Column */}
-          <div className="space-y-6">
-            <span className="text-xs font-semibold tracking-widest text-[#c9a84c] uppercase bg-[#121216] border border-[#c9a84c]/30 px-3.5 py-1.5 rounded-full">
-              Kontakt & Anfahrt
-            </span>
+          {/* Left Info & Google Maps Mini-Map Column */}
+          <div className="space-y-6 flex flex-col justify-between">
+            <div className="space-y-6">
+              <span className="text-xs font-semibold tracking-widest text-[#c9a84c] uppercase bg-[#121216] border border-[#c9a84c]/30 px-3.5 py-1.5 rounded-full">
+                Kontakt & Anfahrt
+              </span>
 
-            <h2 className="font-outfit text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
-              Sichern Sie sich Ihren <span className="italic font-normal text-[#c9a84c]">Tattoo-Termin</span>
-            </h2>
+              <h2 className="font-outfit text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+                Sichern Sie sich Ihren <span className="italic font-normal text-[#c9a84c]">Tattoo-Termin</span>
+              </h2>
 
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Haben Sie eine konkrete Idee, ein Foto oder möchten Sie ein Cover-Up besprechen? Rufen Sie uns direkt an oder senden Sie uns Ihre Wünsche über das Formular!
-            </p>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                Haben Sie eine konkrete Idee, ein Foto oder möchten Sie ein Cover-Up besprechen? Rufen Sie uns direkt an oder senden Sie uns Ihre Wünsche über das Formular!
+              </p>
 
-            <div className="space-y-4 pt-4 text-xs font-medium text-slate-200">
-              <div className="flex items-center gap-3 bg-[#121216] p-4 rounded-2xl border border-slate-800">
-                <MapPin className="w-5 h-5 text-slate-300 shrink-0" />
-                <div>
-                  <span className="font-bold text-white block text-sm">Adresse:</span>
-                  <span>Hauptstraße 231, 50169 Kerpen-Horrem</span>
+              <div className="space-y-3 pt-2 text-xs font-medium text-slate-200">
+                <div className="flex items-center justify-between bg-[#121216] p-4 rounded-2xl border border-slate-800">
+                  <div className="flex items-center gap-3">
+                    <MapPin className="w-5 h-5 text-[#c9a84c] shrink-0" />
+                    <div>
+                      <span className="font-bold text-white block text-sm">Adresse:</span>
+                      <span>Hauptstraße 231, 50169 Kerpen</span>
+                    </div>
+                  </div>
+                  <a
+                    href="https://maps.google.com/?q=The+Burning+Bandit+Kerpen+Hauptstraße+231"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-xl bg-slate-900 border border-slate-800 text-[#c9a84c] hover:text-white transition-colors shrink-0"
+                    aria-label="Route in Google Maps öffnen"
+                  >
+                    <Navigation className="w-4 h-4" />
+                  </a>
+                </div>
+
+                <div className="flex items-center gap-3 bg-[#121216] p-4 rounded-2xl border border-slate-800">
+                  <Phone className="w-5 h-5 text-[#c9a84c] shrink-0" />
+                  <div>
+                    <span className="font-bold text-white block text-sm">Telefon:</span>
+                    <span>02273 9499600</span>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 bg-[#121216] p-4 rounded-2xl border border-slate-800">
+                  <Clock className="w-5 h-5 text-[#c9a84c] shrink-0" />
+                  <div>
+                    <span className="font-bold text-white block text-sm">Öffnungszeiten:</span>
+                    <span>Di – Fr: 12:00 – 18:30 Uhr | Sa: 12:00 – 16:00 Uhr</span>
+                  </div>
                 </div>
               </div>
+            </div>
 
-              <div className="flex items-center gap-3 bg-[#121216] p-4 rounded-2xl border border-slate-800">
-                <Phone className="w-5 h-5 text-slate-300 shrink-0" />
-                <div>
-                  <span className="font-bold text-white block text-sm">Telefon:</span>
-                  <span>02273 9499600</span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 bg-[#121216] p-4 rounded-2xl border border-slate-800">
-                <Clock className="w-5 h-5 text-slate-300 shrink-0" />
-                <div>
-                  <span className="font-bold text-white block text-sm">Öffnungszeiten:</span>
-                  <span>Di – Fr: 12:00 – 18:30 Uhr | Sa: 12:00 – 16:00 Uhr</span>
-                </div>
-              </div>
+            {/* Interactive Google Maps Mini-Map Card */}
+            <div className="bg-[#121216] border border-slate-800 rounded-3xl overflow-hidden shadow-lg p-2 mt-4">
+              <iframe
+                title="Google Maps Anfahrt The Burning Bandit Kerpen"
+                src="https://maps.google.com/maps?q=Hauptstrasse%20231%2C%2050169%20Kerpen&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                className="w-full h-52 sm:h-60 rounded-2xl border-0"
+                loading="lazy"
+                allowFullScreen
+              />
             </div>
 
           </div>
 
           {/* Right Column: Dark Container Form */}
-          <div className="bg-[#121216] border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl">
+          <div className="bg-[#121216] border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl flex flex-col justify-center">
             {submitted ? (
               <div className="text-center py-12 space-y-4">
                 <CheckCircle className="w-12 h-12 text-[#c9a84c] mx-auto" />
