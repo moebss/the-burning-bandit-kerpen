@@ -1,3 +1,5 @@
+import logoImg from '../images/logo_bandit_transparent.png';
+
 export default function Footer() {
   return (
     <footer className="bg-[#0b0b0e] text-slate-300 py-12 px-4 sm:px-8 border-t border-slate-800/80 text-xs">
@@ -5,7 +7,16 @@ export default function Footer() {
         
         {/* Col 1 */}
         <div className="space-y-3">
-          <span className="font-syne font-bold text-lg text-white block">The Burning Bandit</span>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-[#121216] border border-[#c9a84c]/40 p-1 flex items-center justify-center shrink-0">
+              <img
+                src={logoImg}
+                alt="The Burning Bandit Logo Emblem"
+                className="w-full h-full object-contain filter drop-shadow"
+              />
+            </div>
+            <span className="font-outfit font-bold text-lg text-white block leading-tight">The Burning Bandit</span>
+          </div>
           <p className="text-slate-400 leading-relaxed text-[11px]">
             Independent Ink Studio in Kerpen-Horrem. Black & Grey Realismus, Fine Line, Cover-Up & Piercing. 4.8 Sterne auf Google.
           </p>

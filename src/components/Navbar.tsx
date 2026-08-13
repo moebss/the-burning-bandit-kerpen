@@ -1,4 +1,5 @@
-import { Phone, Calendar, Flame } from 'lucide-react';
+import { Phone, Calendar } from 'lucide-react';
+import logoImg from '../images/logo_bandit_transparent.png';
 
 interface NavbarProps {
   onOpenContact: () => void;
@@ -6,19 +7,27 @@ interface NavbarProps {
 
 export default function Navbar({ onOpenContact }: NavbarProps) {
   return (
-    <header className="sticky top-0 z-50 bg-[#0b0b0e]/95 backdrop-blur-md border-b border-slate-800/80 py-4 px-4 sm:px-8 shadow-md">
+    <header className="sticky top-0 z-50 bg-[#0b0b0e]/95 backdrop-blur-md border-b border-slate-800/80 py-3 px-4 sm:px-8 shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
-        {/* Brand Logo */}
-        <div className="flex items-center gap-3.5">
-          <div className="w-10 h-10 rounded-xl bg-[#121216] border border-[#c9a84c]/30 flex items-center justify-center text-[#c9a84c] font-bold text-lg shadow-sm shrink-0">
-            <Flame className="w-5 h-5 text-[#c9a84c]" />
+        {/* Brand Logo with Official Mascot Emblem */}
+        <a href="#" className="flex items-center gap-3 group">
+          <div className="w-12 h-12 rounded-xl bg-[#121216] border border-[#c9a84c]/40 p-1 flex items-center justify-center shadow-sm shrink-0 group-hover:border-[#c9a84c] transition-colors">
+            <img
+              src={logoImg}
+              alt="The Burning Bandit Tattoo Studio Logo"
+              className="w-full h-full object-contain filter drop-shadow-md group-hover:scale-105 transition-transform"
+            />
           </div>
           <div>
-            <span className="font-outfit font-bold text-xl tracking-tight text-white block leading-none">The Burning Bandit</span>
-            <span className="text-[10px] font-semibold text-[#c9a84c] tracking-widest uppercase block mt-1">Independent Ink • Kerpen</span>
+            <span className="font-outfit font-bold text-xl tracking-tight text-white block leading-none group-hover:text-[#c9a84c] transition-colors">
+              The Burning Bandit
+            </span>
+            <span className="text-[10px] font-semibold text-[#c9a84c] tracking-widest uppercase block mt-1">
+              Tattoo Studio • Kerpen
+            </span>
           </div>
-        </div>
+        </a>
 
         {/* Navigation Links */}
         <nav className="hidden md:flex items-center gap-8 text-xs font-semibold text-slate-300 uppercase tracking-widest">

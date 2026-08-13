@@ -1,5 +1,6 @@
-import { Star, CheckCircle2, ShieldCheck, ArrowRight, Flame, Skull } from 'lucide-react';
+import { Star, CheckCircle2, ShieldCheck, ArrowRight } from 'lucide-react';
 import heroImg from '../images/hero_tattoo.jpg';
+import logoImg from '../images/logo_bandit_transparent.png';
 
 interface HeroProps {
   onOpenContact: () => void;
@@ -17,16 +18,18 @@ export default function Hero({ onOpenContact }: HeroProps) {
         {/* Left 50% Content Column */}
         <div className="w-full lg:w-1/2 px-4 sm:px-6 lg:px-8 py-12 lg:py-20 flex flex-col justify-center">
           
-          {/* Eyebrow Badge */}
-          <div className="inline-flex items-center gap-2.5 bg-[#121216] border border-[#c9a84c]/30 px-4 py-1.5 rounded-full shadow-sm w-fit mb-6">
-            <div className="flex items-center gap-1 text-slate-200">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 fill-slate-200 text-slate-200" />
-              ))}
+          {/* Official Emblem & Google Rating Eyebrow */}
+          <div className="flex items-center gap-3 mb-6">
+            <div className="inline-flex items-center gap-2.5 bg-[#121216] border border-[#c9a84c]/30 px-4 py-1.5 rounded-full shadow-sm w-fit">
+              <div className="flex items-center gap-1 text-slate-200">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-3.5 h-3.5 fill-slate-200 text-slate-200" />
+                ))}
+              </div>
+              <span className="text-xs font-bold text-[#c9a84c] tracking-wider uppercase">
+                4.8 ★ bei 160+ Google-Bewertungen
+              </span>
             </div>
-            <span className="text-xs font-bold text-[#c9a84c] tracking-wider uppercase">
-              4.8 ★ bei 160+ Google-Bewertungen
-            </span>
           </div>
 
           {/* Headline - Outfit Display */}
@@ -78,7 +81,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
 
         </div>
 
-        {/* Right 50% Image Column */}
+        {/* Right 50% Image Column with Official Logo Badge */}
         <div className="w-full lg:w-1/2 relative min-h-[450px] lg:min-h-full overflow-hidden bg-slate-950">
           <img
             src={heroImg}
@@ -87,15 +90,20 @@ export default function Hero({ onOpenContact }: HeroProps) {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0e] via-transparent to-transparent lg:hidden" />
           
-          {/* Floating Badge */}
-          <div className="absolute bottom-8 left-8 right-8 lg:left-auto lg:right-8 lg:max-w-xs bg-[#0b0b0e]/95 backdrop-blur-md p-4 rounded-2xl border border-slate-800 shadow-2xl z-20">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#121216] text-[#c9a84c] flex items-center justify-center font-bold text-lg border border-[#c9a84c]/30 shrink-0">
-                <Skull className="w-5 h-5 text-[#c9a84c]" />
+          {/* Floating Studio Crest Badge featuring Official Logo Mascot */}
+          <div className="absolute bottom-8 left-8 right-8 lg:left-auto lg:right-8 lg:max-w-sm bg-[#0b0b0e]/95 backdrop-blur-md p-4 rounded-2xl border border-[#c9a84c]/40 shadow-2xl z-20">
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-xl bg-[#121216] border border-[#c9a84c]/50 p-1 flex items-center justify-center shrink-0 shadow-md">
+                <img
+                  src={logoImg}
+                  alt="The Burning Bandit Offizielles Logo"
+                  className="w-full h-full object-contain filter drop-shadow"
+                />
               </div>
               <div>
-                <p className="text-xs font-bold text-white uppercase tracking-wider">Kult-Studio Kerpen</p>
-                <p className="text-[11px] text-[#c9a84c] font-normal mt-0.5">Hauptstraße 231 • 50169 Kerpen</p>
+                <p className="text-xs font-bold text-white uppercase tracking-wider">The Burning Bandit Tattoo</p>
+                <p className="text-[11px] text-[#c9a84c] font-semibold mt-0.5">Offizielles Meisterstudio Kerpen</p>
+                <p className="text-[10px] text-slate-400 mt-0.5">Hauptstraße 231 • 50169 Kerpen</p>
               </div>
             </div>
           </div>
