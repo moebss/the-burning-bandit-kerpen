@@ -14,11 +14,11 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0c]/90 backdrop-blur-md border-b border-slate-800/80 py-3.5 px-4 sm:px-8 shadow-xl transition-all">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0c]/92 backdrop-blur-md border-b border-slate-800/80 py-3 sm:py-3.5 px-4 sm:px-6 lg:px-8 shadow-xl transition-all">
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
         
         {/* Brand Logo with Official Mascot Emblem */}
-        <a href="#" className="flex items-center gap-3 group">
+        <a href="#" className="flex items-center gap-3 shrink-0 group">
           <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#121216] border border-[#c9a84c]/40 p-1 flex items-center justify-center shadow-sm shrink-0 group-hover:border-[#c9a84c] transition-colors">
             <img
               src={logoImg}
@@ -36,22 +36,22 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
           </div>
         </a>
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-8 text-xs font-semibold text-slate-300 uppercase tracking-widest">
-          <a href="#stile" className="hover:text-[#c9a84c] transition-colors">Tattoo Stile</a>
-          <a href="#artists" className="hover:text-[#c9a84c] transition-colors">Artists</a>
-          <a href="#coverup" className="hover:text-[#c9a84c] transition-colors">Cover-Up</a>
-          <a href="#bewertungen" className="hover:text-[#c9a84c] transition-colors">Bewertungen</a>
-          <a href="#rechner" className="hover:text-[#c9a84c] transition-colors">Kalkulator</a>
-          <a href="#faq" className="hover:text-[#c9a84c] transition-colors">FAQ</a>
+        {/* Desktop Navigation Links (Visible on XL screens to ensure zero tablet wrapping) */}
+        <nav className="hidden xl:flex items-center gap-7 text-xs font-semibold text-slate-300 uppercase tracking-widest">
+          <a href="#stile" className="hover:text-[#c9a84c] transition-colors whitespace-nowrap">Tattoo Stile</a>
+          <a href="#artists" className="hover:text-[#c9a84c] transition-colors whitespace-nowrap">Artists</a>
+          <a href="#coverup" className="hover:text-[#c9a84c] transition-colors whitespace-nowrap">Cover-Up</a>
+          <a href="#bewertungen" className="hover:text-[#c9a84c] transition-colors whitespace-nowrap">Bewertungen</a>
+          <a href="#rechner" className="hover:text-[#c9a84c] transition-colors whitespace-nowrap">Kalkulator</a>
+          <a href="#faq" className="hover:text-[#c9a84c] transition-colors whitespace-nowrap">FAQ</a>
         </nav>
 
-        {/* Action Buttons & Mobile Menu Toggle */}
-        <div className="flex items-center gap-3">
+        {/* Action Buttons & Mobile/Tablet Menu Toggle */}
+        <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
           <a
             href="tel:022739499600"
             aria-label="Anrufen bei The Burning Bandit Kerpen"
-            className="hidden sm:flex items-center gap-2 text-xs font-semibold text-slate-200 bg-[#121216] hover:bg-slate-800 border border-slate-800 px-4 py-2.5 rounded-xl transition-all"
+            className="hidden md:flex items-center gap-2 text-xs font-semibold text-slate-200 bg-[#121216] hover:bg-slate-800 border border-slate-800 px-3.5 py-2.5 rounded-xl transition-all whitespace-nowrap"
           >
             <Phone className="w-3.5 h-3.5 text-[#c9a84c]" />
             <span className="tabular-nums">02273 9499600</span>
@@ -60,17 +60,17 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
           <button
             onClick={onOpenContact}
             aria-label="Tattoo Termin anfragen"
-            className="hidden sm:flex bg-[#c9a84c] hover:bg-[#b8973b] text-slate-950 font-bold text-xs px-6 py-2.5 rounded-xl shadow-md transition-all items-center gap-2 cursor-pointer uppercase tracking-wider"
+            className="hidden sm:flex bg-[#c9a84c] hover:bg-[#b8973b] text-slate-950 font-bold text-xs px-5 sm:px-6 py-2.5 rounded-xl shadow-md transition-all items-center gap-2 cursor-pointer uppercase tracking-wider whitespace-nowrap"
           >
             <Calendar className="w-3.5 h-3.5" />
             <span>Termin Anfragen</span>
           </button>
 
-          {/* Mobile Hamburger Button */}
+          {/* Hamburger Button for Mobile and Tablets */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Menü öffnen"
-            className="md:hidden p-2.5 rounded-xl bg-[#121216] border border-slate-800 text-slate-200 hover:text-[#c9a84c] transition-colors cursor-pointer"
+            className="xl:hidden p-2.5 rounded-xl bg-[#121216] border border-slate-800 text-slate-200 hover:text-[#c9a84c] transition-colors cursor-pointer shrink-0"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -78,25 +78,35 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
 
       </div>
 
-      {/* Mobile Navigation Drawer */}
+      {/* Mobile & Tablet Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden pt-4 pb-6 px-4 border-t border-slate-800/80 bg-[#0a0a0c] space-y-3 mt-3 animate-in fade-in slide-in-from-top-2">
+        <div className="xl:hidden pt-4 pb-6 px-4 border-t border-slate-800/80 bg-[#0a0a0c] space-y-3 mt-3 animate-in fade-in slide-in-from-top-2 shadow-2xl rounded-b-2xl">
           <nav className="flex flex-col space-y-2 text-sm font-semibold text-slate-200 uppercase tracking-wider">
-            <a href="#stile" onClick={handleNavClick} className="p-2.5 rounded-lg hover:bg-[#121216] hover:text-[#c9a84c]">Tattoo Stile</a>
-            <a href="#artists" onClick={handleNavClick} className="p-2.5 rounded-lg hover:bg-[#121216] hover:text-[#c9a84c]">Artists</a>
-            <a href="#coverup" onClick={handleNavClick} className="p-2.5 rounded-lg hover:bg-[#121216] hover:text-[#c9a84c]">Cover-Up</a>
-            <a href="#bewertungen" onClick={handleNavClick} className="p-2.5 rounded-lg hover:bg-[#121216] hover:text-[#c9a84c]">Bewertungen</a>
-            <a href="#rechner" onClick={handleNavClick} className="p-2.5 rounded-lg hover:bg-[#121216] hover:text-[#c9a84c]">Kalkulator</a>
-            <a href="#faq" onClick={handleNavClick} className="p-2.5 rounded-lg hover:bg-[#121216] hover:text-[#c9a84c]">FAQ</a>
+            <a href="#stile" onClick={handleNavClick} className="p-3 rounded-xl hover:bg-[#121216] hover:text-[#c9a84c] transition-colors">Tattoo Stile</a>
+            <a href="#artists" onClick={handleNavClick} className="p-3 rounded-xl hover:bg-[#121216] hover:text-[#c9a84c] transition-colors">Artists</a>
+            <a href="#coverup" onClick={handleNavClick} className="p-3 rounded-xl hover:bg-[#121216] hover:text-[#c9a84c] transition-colors">Cover-Up</a>
+            <a href="#bewertungen" onClick={handleNavClick} className="p-3 rounded-xl hover:bg-[#121216] hover:text-[#c9a84c] transition-colors">Bewertungen</a>
+            <a href="#rechner" onClick={handleNavClick} className="p-3 rounded-xl hover:bg-[#121216] hover:text-[#c9a84c] transition-colors">Kalkulator</a>
+            <a href="#faq" onClick={handleNavClick} className="p-3 rounded-xl hover:bg-[#121216] hover:text-[#c9a84c] transition-colors">FAQ</a>
           </nav>
           
-          <button
-            onClick={() => { handleNavClick(); onOpenContact(); }}
-            className="w-full bg-[#c9a84c] text-slate-950 font-bold text-xs py-3 rounded-xl uppercase tracking-wider flex items-center justify-center gap-2 mt-2"
-          >
-            <Calendar className="w-4 h-4" />
-            <span>Termin Anfragen</span>
-          </button>
+          <div className="pt-2 border-t border-slate-800 flex flex-col gap-2.5">
+            <a
+              href="tel:022739499600"
+              className="md:hidden w-full bg-[#121216] text-white border border-slate-800 font-semibold text-xs py-3 rounded-xl uppercase tracking-wider flex items-center justify-center gap-2"
+            >
+              <Phone className="w-4 h-4 text-[#c9a84c]" />
+              <span>02273 9499600</span>
+            </a>
+            
+            <button
+              onClick={() => { handleNavClick(); onOpenContact(); }}
+              className="w-full bg-[#c9a84c] text-slate-950 font-bold text-xs py-3.5 rounded-xl uppercase tracking-wider flex items-center justify-center gap-2"
+            >
+              <Calendar className="w-4 h-4" />
+              <span>Termin Anfragen</span>
+            </button>
+          </div>
         </div>
       )}
     </header>
