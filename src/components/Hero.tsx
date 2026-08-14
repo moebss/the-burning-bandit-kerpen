@@ -36,7 +36,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
         {/* Massive Outfit Display Headline */}
         <h1 className="font-outfit text-5xl sm:text-7xl lg:text-8xl font-extrabold text-white tracking-tight leading-[1.05] max-w-5xl mx-auto">
           Custom Tattoos & <br />
-          <span className="italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#f0dc9e] via-[#c9a84c] to-[#a8882d]">Independent Ink</span>.
+          <span className="text-[#c9a84c]">Independent Ink</span>.
         </h1>
 
         {/* Atmospheric Subtitle */}
