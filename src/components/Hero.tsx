@@ -1,4 +1,4 @@
-import { ArrowRight, Phone, Star, MapPin, Sparkles, ChevronDown, ShieldCheck, Flame } from 'lucide-react';
+import { ArrowRight, Phone, Star, MapPin, Sparkles, ShieldCheck, Flame } from 'lucide-react';
 import heroImg from '../images/hero_tattoo.jpg';
 
 interface HeroProps {
@@ -6,10 +6,6 @@ interface HeroProps {
 }
 
 export default function Hero({ onOpenContact }: HeroProps) {
-  const scrollToStyles = () => {
-    document.getElementById('stile')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <section id="hero" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#0a0a0c] pt-32 pb-20 sm:pt-36 sm:pb-24 border-b border-slate-800/80">
       
@@ -107,16 +103,6 @@ export default function Hero({ onOpenContact }: HeroProps) {
             <span className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Hauptstraße 231</span>
           </div>
         </div>
-
-        {/* Scroll Indicator */}
-        <button
-          onClick={scrollToStyles}
-          className="pt-6 inline-flex flex-col items-center gap-1 text-slate-400 hover:text-white transition-colors cursor-pointer"
-          aria-label="Zu den Tattoo-Stilen scrollen"
-        >
-          <span className="text-[10px] uppercase tracking-widest">Stile & Galerie entdecken</span>
-          <ChevronDown className="w-4 h-4 animate-bounce text-[#c9a84c]" />
-        </button>
 
       </div>
     </section>
