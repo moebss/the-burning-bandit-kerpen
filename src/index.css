@@ -1,16 +1,28 @@
 @import "tailwindcss";
 
-@layer base {
-  body {
-    font-family: 'Inter', sans-serif;
-  }
-  h1, h2, h3, .font-display, .font-outfit {
-    font-family: 'Outfit', sans-serif;
-  }
+@theme {
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --color-accent: #c9a84c;
+  --color-accent-hover: #b8973b;
+  --color-brand-bg: #0a0a0c;
+  --color-brand-surface: #121216;
+  --color-brand-card: #18181f;
+  --color-brand-border: #262630;
 }
 
-/* Kreativrichtung: High-End Editorial Dark / Champagner-Gold / Autorität / Durchdacht */
-/* Begründung: SmokeFactory High-End Studio-Ästhetik für The Burning Bandit in Kerpen */
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-brand-bg);
+  color: #f1f5f9;
+}
+
+h1, h2, h3, h4, .font-display, .font-outfit {
+  font-family: var(--font-display);
+}
+
+/* Kreativrichtung: High-End Dark Craft / Champagner-Gold / Autorität / Durchdacht */
+/* Begründung: Kult Tattoo-Studio in Kerpen-Horrem mit Outfit Display & Inter Body */
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
